@@ -1,0 +1,41 @@
+# CTDLGT1.2.cpp
+ #include<stdio.h>
+ #include<codio.h>
+ Struct HonSo
+ //Hỗn Số là số kết hợp phân số và số nguyên có dạng c a/b
+{
+      int SoNguyen, TuSo, MauSo;
+}
+typedef Struct HonSo HONSO;
+void NhapHonSo(HonSo &);
+void XuatHonSo(HonSo);
+void NhapHonSo (HonSo &hs)
+{
+            printf(“\nNhap vao so nguyen: “);
+            scanf(“%d”, &hs.SoNguyen);
+           
+            printf(“\nNhap vao tu so: “);
+            scanf(“%d”, &hs.TuSo);
+            
+            do
+            {
+                        printf(“\nNhap vao mau so: “);
+                        scanf(“%d”, &hs.MauSo);
+
+                        if(hs.MauSo == 0)
+                       {
+                                  printf(“\nMau so phai khac 0. Xin kiem tra lai !”);
+                        }
+             }while(hs.MauSo ==0);
+void XuatHonSo (HonSo hs)
+{
+            printf("%d/%d/%d", hs.SoNguyen, hs.TuSo, hs.MauSo);
+}
+int main()
+{
+       HonSo hs;
+       NhapHonSo(hs);
+       XuatHonSo(hs);
+      
+       return 0;
+             }
